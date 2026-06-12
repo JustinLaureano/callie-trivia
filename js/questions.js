@@ -292,4 +292,160 @@ const QUESTION_POOL = [
       ],
     },
   },
+
+  {
+    category: "Disney & Pixar",
+    tiers: {
+      10: [
+        { clue: "This snowman from 'Frozen' loves warm hugs and summer.", answer: "Olaf", choices: ["Olaf", "Elsa", "Anna", "Sven"] },
+        { clue: "This clownfish gets lost and his dad swims the whole ocean to find him.", answer: "Nemo", choices: ["Nemo", "Dory", "Bruce", "Marlin"] },
+        { clue: "This cowboy doll in 'Toy Story' says 'There's a snake in my boot!'", answer: "Woody", choices: ["Woody", "Buzz", "Rex", "Hamm"] },
+      ],
+      20: [
+        { clue: "In 'Frozen', this queen can make ice and snow with her hands.", answer: "Elsa", choices: ["Elsa", "Anna", "Moana", "Belle"] },
+        { clue: "This space ranger toy says 'To infinity and beyond!'", answer: "Buzz Lightyear", choices: ["Buzz Lightyear", "Woody", "Zurg", "Rex"] },
+        { clue: "This blue fish in 'Finding Nemo' keeps forgetting things.", answer: "Dory", choices: ["Dory", "Nemo", "Marlin", "Squirt"] },
+      ],
+      50: [
+        { clue: "This brave girl sails across the ocean with a rooster named Heihei.", answer: "Moana", choices: ["Moana", "Elsa", "Ariel", "Anna"] },
+        { clue: "This lion cub in 'The Lion King' will grow up to be king. His name means 'lion'.", answer: "Simba", choices: ["Simba", "Nala", "Mufasa", "Scar"] },
+        { clue: "In 'Toy Story', this is the name of the boy who owns the toys.", answer: "Andy", choices: ["Andy", "Sid", "Buzz", "Bonnie"] },
+      ],
+      100: [
+        { clue: "These two monsters, a big blue furry one and a little green round one, are best friends in 'Monsters, Inc.'", answer: "Sulley and Mike", choices: ["Sulley and Mike", "Tom and Jerry", "Timon and Pumbaa", "Anna and Elsa"] },
+        { clue: "In the movie 'Cars', this red race car number 95 is the main character.", answer: "Lightning McQueen", choices: ["Lightning McQueen", "Mater", "Sally", "Doc"] },
+        { clue: "In 'Encanto', the family lives in a magical house in this country in South America.", answer: "Colombia", choices: ["Colombia", "Mexico", "Spain", "Brazil"] },
+      ],
+    },
+  },
+
+  {
+    category: "Things That Go",
+    tiers: {
+      10: [
+        { clue: "This has four wheels and a horn that goes 'beep beep'. You drive it on the road.", answer: "car", choices: ["car", "boat", "plane", "bike"] },
+        { clue: "This big yellow vehicle takes kids to school.", answer: "bus", choices: ["bus", "car", "truck", "van"] },
+        { clue: "This has two wheels and pedals, and you ring its bell.", answer: "bike", choices: ["bike", "car", "bus", "train"] },
+      ],
+      20: [
+        { clue: "This flies high in the sky and carries people far away.", answer: "airplane", choices: ["airplane", "car", "boat", "bus"] },
+        { clue: "This floats on the water and can have a sail.", answer: "boat", choices: ["boat", "car", "plane", "bike"] },
+        { clue: "This long vehicle rides on tracks and goes 'choo choo'.", answer: "train", choices: ["train", "bus", "boat", "car"] },
+      ],
+      50: [
+        { clue: "This red truck rushes to put out fires and has a loud siren.", answer: "fire truck", choices: ["fire truck", "school bus", "taxi", "tractor"] },
+        { clue: "This vehicle flies with spinning blades on top and can land straight down.", answer: "helicopter", choices: ["helicopter", "airplane", "rocket", "kite"] },
+        { clue: "This blasts off with fire and flies all the way to space.", answer: "rocket", choices: ["rocket", "plane", "boat", "car"] },
+      ],
+      100: [
+        { clue: "This boat can go deep under the water like in 'Finding Nemo'.", answer: "submarine", choices: ["submarine", "sailboat", "canoe", "ferry"] },
+        { clue: "This machine digs big holes in the ground with a giant scoop.", answer: "excavator", choices: ["excavator", "race car", "school bus", "scooter"] },
+        { clue: "Astronauts ride a rocket to live and work in this place that floats around Earth.", answer: "space station", choices: ["space station", "airport", "harbor", "garage"] },
+      ],
+    },
+  },
+
+  {
+    category: "Bugs & Crawlies",
+    tiers: {
+      10: [
+        { clue: "This bug glows and lights up at night in the summer.", answer: "firefly", choices: ["firefly", "ant", "bee", "spider"] },
+        { clue: "This tiny black bug works hard and carries crumbs to its hill.", answer: "ant", choices: ["ant", "bee", "fly", "worm"] },
+        { clue: "This red bug with black spots is named like a lady.", answer: "ladybug", choices: ["ladybug", "beetle", "ant", "moth"] },
+      ],
+      20: [
+        { clue: "This buzzing bug makes honey and can sting.", answer: "bee", choices: ["bee", "fly", "ant", "wasp"] },
+        { clue: "This bug has pretty, colorful wings and used to be a caterpillar.", answer: "butterfly", choices: ["butterfly", "bee", "ladybug", "moth"] },
+        { clue: "This long, squishy crawler lives in the dirt and has no legs.", answer: "worm", choices: ["worm", "snake", "ant", "slug"] },
+      ],
+      50: [
+        { clue: "This bug spins a web to catch its food and has eight legs.", answer: "spider", choices: ["spider", "ant", "fly", "bee"] },
+        { clue: "This green bug hops and rubs its legs to make a chirping sound.", answer: "grasshopper", choices: ["grasshopper", "cricket", "beetle", "ant"] },
+        { clue: "This fuzzy bug crawls along and will turn into a butterfly.", answer: "caterpillar", choices: ["caterpillar", "worm", "snail", "slug"] },
+      ],
+      100: [
+        { clue: "This bug has a hard shell on its back. There are more kinds of these than any other bug.", answer: "beetle", choices: ["beetle", "bee", "fly", "moth"] },
+        { clue: "This bug zips and zooms over ponds and has long, see-through wings.", answer: "dragonfly", choices: ["dragonfly", "butterfly", "bee", "firefly"] },
+        { clue: "This bug carries its shell on its back and leaves a slimy trail.", answer: "snail", choices: ["snail", "worm", "ant", "slug"] },
+      ],
+    },
+  },
+
+  {
+    category: "Outer Space",
+    tiers: {
+      10: [
+        { clue: "This big bright star keeps Earth warm and shines in the day.", answer: "sun", choices: ["sun", "moon", "star", "cloud"] },
+        { clue: "These twinkle in the night sky way up high.", answer: "stars", choices: ["stars", "clouds", "birds", "leaves"] },
+        { clue: "This round thing lights up the night sky and changes shape.", answer: "moon", choices: ["moon", "sun", "star", "rocket"] },
+      ],
+      20: [
+        { clue: "This is the name of the planet that WE live on.", answer: "Earth", choices: ["Earth", "Mars", "Moon", "Sun"] },
+        { clue: "A person who flies a rocket into space is called this.", answer: "astronaut", choices: ["astronaut", "pilot", "farmer", "doctor"] },
+        { clue: "This red planet is sometimes called the 'Red Planet'.", answer: "Mars", choices: ["Mars", "Earth", "Sun", "Moon"] },
+      ],
+      50: [
+        { clue: "This is the biggest planet in our space. It is a giant ball of gas.", answer: "Jupiter", choices: ["Jupiter", "Earth", "Mars", "Moon"] },
+        { clue: "This planet has beautiful rings around it.", answer: "Saturn", choices: ["Saturn", "Earth", "Mars", "Sun"] },
+        { clue: "These rocks fall through the sky and we call them 'shooting stars'.", answer: "meteor", choices: ["meteor", "cloud", "planet", "moon"] },
+      ],
+      100: [
+        { clue: "This is the name of all the planets, the sun, and the moons together.", answer: "solar system", choices: ["solar system", "rainbow", "ocean", "galaxy"] },
+        { clue: "This bumpy car drives around on Mars to explore it. It rhymes with 'over'.", answer: "rover", choices: ["rover", "rocket", "plane", "boat"] },
+        { clue: "This is how many planets go around our sun.", answer: "eight", choices: ["eight", "ten", "five", "three"] },
+      ],
+    },
+  },
+
+  {
+    category: "Opposites",
+    tiers: {
+      10: [
+        { clue: "The opposite of UP is this.", answer: "down", choices: ["down", "left", "over", "out"] },
+        { clue: "The opposite of HOT is this.", answer: "cold", choices: ["cold", "warm", "wet", "big"] },
+        { clue: "The opposite of BIG is this.", answer: "small", choices: ["small", "tall", "wide", "fast"] },
+      ],
+      20: [
+        { clue: "The opposite of HAPPY is this.", answer: "sad", choices: ["sad", "mad", "glad", "silly"] },
+        { clue: "The opposite of FAST is this.", answer: "slow", choices: ["slow", "quick", "loud", "soft"] },
+        { clue: "The opposite of DAY is this.", answer: "night", choices: ["night", "noon", "sun", "morning"] },
+      ],
+      50: [
+        { clue: "The opposite of OPEN is this.", answer: "closed", choices: ["closed", "shut", "locked", "wide"] },
+        { clue: "The opposite of EMPTY is this.", answer: "full", choices: ["full", "open", "heavy", "big"] },
+        { clue: "The opposite of OLD is this.", answer: "young", choices: ["young", "new", "little", "short"] },
+      ],
+      100: [
+        { clue: "The opposite of FIRST is this.", answer: "last", choices: ["last", "next", "second", "front"] },
+        { clue: "The opposite of LOUD is this.", answer: "quiet", choices: ["quiet", "soft", "calm", "low"] },
+        { clue: "The opposite of ABOVE is this.", answer: "below", choices: ["below", "under", "beside", "behind"] },
+      ],
+    },
+  },
+
+  {
+    category: "Helpers in Our Town",
+    tiers: {
+      10: [
+        { clue: "This helper puts out fires and wears a big hat and boots.", answer: "firefighter", choices: ["firefighter", "teacher", "chef", "pilot"] },
+        { clue: "This helper makes you feel better when you are sick.", answer: "doctor", choices: ["doctor", "farmer", "police officer", "baker"] },
+        { clue: "This helper teaches you to read and count at school.", answer: "teacher", choices: ["teacher", "doctor", "chef", "dentist"] },
+      ],
+      20: [
+        { clue: "This helper wears a badge and keeps people safe.", answer: "police officer", choices: ["police officer", "teacher", "chef", "farmer"] },
+        { clue: "This helper brings letters and packages to your house.", answer: "mail carrier", choices: ["mail carrier", "doctor", "pilot", "chef"] },
+        { clue: "This helper cooks yummy food in a restaurant.", answer: "chef", choices: ["chef", "teacher", "dentist", "pilot"] },
+      ],
+      50: [
+        { clue: "This helper takes care of your teeth and tells you to brush.", answer: "dentist", choices: ["dentist", "doctor", "vet", "chef"] },
+        { clue: "This helper flies the airplane high in the sky.", answer: "pilot", choices: ["pilot", "sailor", "driver", "farmer"] },
+        { clue: "This helper is a special doctor who takes care of animals.", answer: "veterinarian", choices: ["veterinarian", "farmer", "zookeeper", "doctor"] },
+      ],
+      100: [
+        { clue: "This helper rides in an ambulance and helps people who are hurt right away.", answer: "paramedic", choices: ["paramedic", "chef", "teacher", "pilot"] },
+        { clue: "This helper builds houses and buildings with tools and wood.", answer: "builder", choices: ["builder", "baker", "barber", "pilot"] },
+        { clue: "This helper fixes pipes and stops leaky water in your house.", answer: "plumber", choices: ["plumber", "painter", "chef", "doctor"] },
+      ],
+    },
+  },
 ];
