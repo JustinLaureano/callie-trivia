@@ -274,4 +274,22 @@ const QUESTION_POOL = [
       ],
     },
   },
+
+  {
+    category: "Math",
+    tiers: {
+      10: [
+        { clue: "What is 2 plus 4?", answer: "six", choices: ["six", "five", "seven", "eight"] },
+      ],
+      20: [
+        { clue: "What is 4 plus 20?", answer: "twenty-four", choices: ["twenty-four", "twenty-two", "twenty-five", "fourteen"] },
+      ],
+      50: [
+        { clue: "What is 99 minus 9?", answer: "ninety", choices: ["ninety", "nine", "ninety-nine", "eighty"] },
+      ],
+      100: [
+        { clue: "What is 5 times 5?", answer: "twenty-five", choices: ["twenty-five", "ten", "twenty", "thirty"] },
+      ],
+    },
+  },
 ];
