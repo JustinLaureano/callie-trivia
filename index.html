@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids Jeopardy!</title>
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- canvas-confetti for celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- Fonts: Anton (board/points), Oswald (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            jeopardy: {
+              blue: '#060CE9',     // classic board blue
+              navy: '#070A52',     // clue background
+              dark: '#040640',     // deep background
+              gold: '#FFCC00',     // value text
+              gold2: '#D69F4C',    // category text
+            },
+          },
+          fontFamily: {
+            display: ['Anton', 'sans-serif'],
+            body: ['Oswald', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="font-body bg-jeopardy-dark text-white min-h-screen">
+
+  <!-- ============================ SETUP SCREEN ============================ -->
+  <section id="setup-screen" class="screen min-h-screen flex flex-col items-center justify-center px-4 py-10">
+    <h1 class="font-display text-6xl sm:text-7xl md:text-8xl text-jeopardy-gold tracking-wide text-center drop-shadow-[0_4px_0_rgba(0,0,0,0.4)]">
+      KIDS JEOPARDY!
+    </h1>
+    <p class="mt-3 text-lg sm:text-xl text-blue-200 text-center">Add 1 to 6 players, then press Start to play!</p>
+
+    <div class="mt-8 w-full max-w-md bg-jeopardy-navy/70 rounded-2xl p-6 shadow-2xl border-2 border-jeopardy-blue">
+      <h2 class="font-display text-2xl text-white mb-4 text-center">Players</h2>
+      <div id="player-inputs" class="space-y-3"><!-- player rows injected here --></div>
+
+      <button id="add-player-btn"
+        class="mt-4 w-full py-2 rounded-xl bg-jeopardy-blue hover:bg-blue-700 transition text-white font-semibold text-lg">
+        ➕ Add Player
+      </button>
+
+      <p id="setup-hint" class="mt-3 text-center text-blue-200 text-sm h-5"></p>
+
+      <button id="start-btn" disabled
+        class="mt-2 w-full py-4 rounded-xl bg-jeopardy-gold text-jeopardy-navy font-display text-3xl tracking-wide
+               disabled:opacity-40 disabled:cursor-not-allowed enabled:hover:brightness-110 transition shadow-lg">
+        START!
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================ BOARD SCREEN ============================ -->
+  <section id="board-screen" class="screen hidden min-h-screen flex flex-col px-2 sm:px-4 py-4">
+    <div class="flex items-center justify-between mb-3 gap-3 flex-wrap">
+      <h1 class="font-display text-3xl sm:text-4xl text-jeopardy-gold tracking-wide">KIDS JEOPARDY!</h1>
+      <div id="scoreboard" class="flex flex-wrap gap-2 justify-end"><!-- score chips injected here --></div>
+    </div>
+
+    <!-- The board grid: 5 columns -->
+    <div id="board-grid" class="grid grid-cols-5 gap-1.5 sm:gap-2 flex-1 min-h-0">
+      <!-- category headers + tiles injected here -->
+    </div>
+  </section>
+
+  <!-- ============================ CLUE MODAL ============================ -->
+  <section id="clue-modal" class="screen hidden fixed inset-0 z-40 bg-jeopardy-navy flex flex-col">
+    <!-- Top bar -->
+    <div class="flex items-center justify-between px-4 sm:px-6 py-3">
+      <span id="clue-category" class="font-display text-xl sm:text-2xl text-jeopardy-gold2 uppercase"></span>
+      <span id="clue-points" class="font-display text-3xl sm:text-4xl text-jeopardy-gold"></span>
+    </div>
+
+    <!-- Clue text -->
+    <div class="flex-1 flex flex-col items-center justify-center px-6 text-center">
+      <p id="clue-text" class="font-display text-3xl sm:text-5xl md:text-6xl leading-tight uppercase max-w-5xl"></p>
+      <button id="speak-btn" class="mt-6 text-lg bg-jeopardy-blue hover:bg-blue-700 transition rounded-full px-5 py-2 font-semibold">
+        🔊 Read it again
+      </button>
+
+      <!-- Answer area (hidden until a player buzzes) -->
+      <div id="answer-area" class="hidden mt-8 w-full max-w-xl">
+        <p class="text-jeopardy-gold text-xl mb-2"><span id="answering-name"></span>, what's your answer?</p>
+
+        <!-- Text input mode -->
+        <div id="text-input-wrap" class="flex flex-col sm:flex-row gap-2 justify-center">
+          <input id="answer-input" type="text" autocomplete="off"
+            class="flex-1 rounded-xl px-4 py-3 text-2xl text-jeopardy-navy font-semibold focus:outline-none focus:ring-4 focus:ring-jeopardy-gold"
+            placeholder="Type your answer..." />
+          <button id="submit-answer-btn"
+            class="rounded-xl px-6 py-3 bg-jeopardy-gold text-jeopardy-navy font-display text-2xl hover:brightness-110 transition">
+            CHECK
+          </button>
+        </div>
+
+        <button id="show-choices-btn"
+          class="mt-3 text-blue-200 underline hover:text-white transition">
+          Can't type? Show choices 👆
+        </button>
+
+        <!-- Multiple choice mode -->
+        <div id="choices-wrap" class="hidden mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3"><!-- choice buttons injected --></div>
+
+        <p id="answer-feedback" class="mt-4 text-2xl font-display h-8"></p>
+      </div>
+    </div>
+
+    <!-- Bottom: player buzz buttons + skip -->
+    <div class="px-4 sm:px-6 py-4 bg-jeopardy-dark/60">
+      <p id="buzz-prompt" class="text-center text-blue-200 mb-2">Press your button to answer!</p>
+      <div id="buzz-buttons" class="flex flex-wrap gap-2 justify-center"><!-- buzz buttons injected --></div>
+      <div class="text-center mt-3">
+        <button id="skip-btn"
+          class="bg-red-600 hover:bg-red-700 transition rounded-xl px-5 py-2 font-semibold text-lg">
+          ⏭️ Skip to next question
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ END SCREEN ============================ -->
+  <section id="end-screen" class="screen hidden min-h-screen flex flex-col items-center justify-center px-4 py-10 text-center">
+    <h1 class="font-display text-5xl sm:text-7xl text-jeopardy-gold tracking-wide">🎉 WINNER! 🎉</h1>
+    <p id="winner-name" class="font-display text-4xl sm:text-6xl text-white mt-4"></p>
+    <div id="final-scores" class="mt-8 w-full max-w-md space-y-2"><!-- final score rows injected --></div>
+    <button id="replay-btn"
+      class="mt-10 py-4 px-10 rounded-xl bg-jeopardy-gold text-jeopardy-navy font-display text-3xl tracking-wide hover:brightness-110 transition shadow-lg">
+      PLAY AGAIN
+    </button>
+  </section>
+
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
