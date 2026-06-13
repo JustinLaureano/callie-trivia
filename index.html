@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kids Jeopardy!</title>
 
-  <!-- Tailwind Play CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- canvas-confetti for celebrations -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-  <!-- Fonts: Anton (board/points), Oswald (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Tailwind Play CDN (vendored locally for offline use) -->
+  <script src="vendor/tailwind.js"></script>
+  <!-- canvas-confetti for celebrations (vendored locally) -->
+  <script src="vendor/confetti.browser.min.js"></script>
+  <!-- Fonts: Anton (board/points), Oswald (body) — vendored locally -->
+  <link href="vendor/fonts/fonts.css" rel="stylesheet" />
 
   <script>
     tailwind.config = {
